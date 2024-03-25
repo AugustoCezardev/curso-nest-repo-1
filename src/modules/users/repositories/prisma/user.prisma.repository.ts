@@ -35,4 +35,12 @@ export class UserPrismaRepository implements IUserRepository {
       },
     });
   }
+
+  async findByUsername(username: string): Promise<UserCreatedDTO> {
+    const user = await this.prisma.user.findUnique({
+      where: { username: username },
+    });
+
+    return user;
+  }
 }
