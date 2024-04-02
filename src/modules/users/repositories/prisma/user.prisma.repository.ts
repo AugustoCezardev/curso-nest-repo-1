@@ -10,6 +10,14 @@ import { IUserRepository } from '../user.repository';
 @Injectable()
 export class UserPrismaRepository implements IUserRepository {
   constructor(private prisma: PrismaService) {}
+
+  async uploadAvatar(id: string, path: string): Promise<void> {
+    await this.prisma.user.update({
+      data: { avatarUrl: path },
+      where: { id },
+    });
+  }
+
   async findById(id: string): Promise<UserCreatedDTO | null> {
     return this.prisma.user.findUnique({
       where: { id },

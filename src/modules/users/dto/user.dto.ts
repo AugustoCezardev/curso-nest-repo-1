@@ -14,3 +14,17 @@ export type UserCreatedDTO = {
   id: string;
   createdAt: Date;
 } & CreateUserDTO;
+
+export type FileDTO = {
+  fieldname: string;
+  originalname: string;
+  encoding: string;
+  mimetype: string;
+  size: number;
+  buffer: Buffer;
+};
+
+export type AvatarDTO = {
+  idUser: string;
+  file: FileDTO;
+};
