@@ -13,6 +13,7 @@ export type UsernameAndEmailDTO = {
 export type UserCreatedDTO = {
   id: string;
   createdAt: Date;
+  avatarUrl?: string;
 } & CreateUserDTO;
 
 export type FileDTO = {
