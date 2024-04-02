@@ -10,7 +10,7 @@ import {
   UseInterceptors,
 } from '@nestjs/common';
 import { FileInterceptor } from '@nestjs/platform-express/multer';
-import { AuthGuard } from 'src/infra/providers/auth-guard.provider';
+import { AuthGuard } from '../../infra/providers/auth-guard.provider';
 import { FileDTO } from './dto/user.dto';
 import {
   CreateUserResponseSchemaDTO,

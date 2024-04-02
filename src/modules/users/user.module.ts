@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { PrismaService } from 'src/infra/database/prisma.service';
-import { IStorage } from 'src/infra/providers/storage/storage';
 import { SupabaseStorageProvider } from 'src/infra/providers/storage/supabase-storage';
+import { IStorage } from '../../infra/providers/storage/storage';
 import { UserPrismaRepository } from './repositories/prisma/user.prisma.repository';
 import { IUserRepository } from './repositories/user.repository';
 import { CreateUserUseCase } from './useCases/create-user.usecase';
