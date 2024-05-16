@@ -11,8 +11,15 @@ import { NotificationTaskUserSchedule } from './notification-task-user.schedule'
     ClientsModule.register([
       {
         name: 'NOTIFICATION',
-        transport: Transport.TCP,
-        options: { port: 3002, host: '127.0.0.1' },
+        transport: Transport.KAFKA,
+        options: {
+          client: {
+            brokers: ['localhost:9092'],
+          },
+          consumer: {
+            groupId: 'gp_app_task_manager',
+          },
+        },
       },
     ]),
   ],
